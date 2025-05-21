@@ -35,7 +35,7 @@
               # models manually in the UI.
               #
               # Search for the models here: https://ollama.com/library
-              models = [ ];
+              models = [ "deepseek-r1:1.5b" ];
               acceleration = "cuda";
             };
 
