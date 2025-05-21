@@ -1,5 +1,5 @@
 rec {
-  description = "Nix flake template";
+  description = "Nix flake containing devShells and services, etc";
 
   inputs = {
     treefmt-nix = {
@@ -9,21 +9,19 @@ rec {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-compat.url = "github:edolstra/flake-compat";
+    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
+    services-flake.url = "github:juspay/services-flake";
   };
 
   outputs =
-    inputs@{ flake-parts, treefmt-nix, ... }:
+    inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       _module.args = { inherit nixConfig; };
       systems = [ "x86_64-linux" ];
       imports = [
-        treefmt-nix.flakeModule
+        ./services
         ./treefmt.nix
       ];
-      flake.templates.default = {
-        path = ./.;
-        inherit description;
-      };
     };
 
   nixConfig = {
