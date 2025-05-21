@@ -10,7 +10,7 @@
       ...
     }:
     {
-      process-compose."services-flake-llm" = pc: {
+      process-compose."ollama-cuda" = pc: {
         imports = [
           inputs.services-flake.processComposeModules.default
         ];
