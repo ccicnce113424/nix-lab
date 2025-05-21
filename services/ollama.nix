@@ -9,8 +9,8 @@
       system,
       ...
     }:
-    {
-      process-compose."ollama-cuda" = pc: {
+    let
+      ollama = accel: pc: {
         imports = [
           inputs.services-flake.processComposeModules.default
         ];
@@ -36,7 +36,7 @@
               #
               # Search for the models here: https://ollama.com/library
               models = [ "deepseek-r1:1.5b" ];
-              acceleration = "cuda";
+              acceleration = accel;
             };
 
             # Get ChatGPT like UI, but open-source, with Open WebUI
@@ -81,5 +81,10 @@
           depends_on.open-webui1.condition = "process_healthy";
         };
       };
+    in
+    {
+      process-compose."ollama-cuda" = ollama "cuda";
+      process-compose."ollama-rocm" = ollama "rocm";
+      process-compose."ollama-cpu" = ollama false;
     };
 }

@@ -2,7 +2,7 @@
 {
   imports = [
     inputs.process-compose-flake.flakeModule
-    ./ollama-cuda.nix
+    ./ollama.nix
   ];
   perSystem =
     { system, ... }:
