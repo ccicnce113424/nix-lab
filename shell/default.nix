@@ -3,6 +3,6 @@
   perSystem =
     { ... }:
     {
-      imports = [ ];
+      imports = [ ./android-tools.nix ];
     };
 }
