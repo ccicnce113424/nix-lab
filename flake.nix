@@ -34,6 +34,7 @@ rec {
           nixpkgs = {
             hostPlatform = system;
             overlays = [ nur.overlays.default ];
+            config.allowUnfree = true;
           };
         };
       _module.args = { inherit nixConfig; };
