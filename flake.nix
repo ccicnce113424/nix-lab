@@ -20,23 +20,8 @@ rec {
   };
 
   outputs =
-    inputs@{
-      nixpkgs,
-      flake-parts,
-      nur,
-      ...
-    }:
+    inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      perSystem =
-        { system, ... }:
-        {
-          imports = [ "${nixpkgs}/nixos/modules/misc/nixpkgs.nix" ];
-          nixpkgs = {
-            hostPlatform = system;
-            overlays = [ nur.overlays.default ];
-            config.allowUnfree = true;
-          };
-        };
       _module.args = { inherit nixConfig; };
       systems = [ "x86_64-linux" ];
       imports = [
@@ -44,6 +29,7 @@ rec {
         # use `nix shell` to enter environment defined with pkgs.buildEnv
         ./shell
         ./treefmt.nix
+        ./nixpkgs.nix
       ];
     };
 
