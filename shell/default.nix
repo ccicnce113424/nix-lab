@@ -3,6 +3,9 @@
   perSystem =
     { ... }:
     {
-      imports = [ ./android-tools.nix ];
+      imports = [
+        ./android-tools.nix
+        ./media-codec.nix
+      ];
     };
 }
