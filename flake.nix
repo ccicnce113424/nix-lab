@@ -6,6 +6,12 @@ rec {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs."flake-parts".follows = "flake-parts";
+      inputs."treefmt-nix".follows = "treefmt-nix";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-compat.url = "github:edolstra/flake-compat";
@@ -14,12 +20,28 @@ rec {
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
+    inputs@{
+      nixpkgs,
+      flake-parts,
+      nur,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
+      perSystem =
+        { system, ... }:
+        {
+          imports = [ "${nixpkgs}/nixos/modules/misc/nixpkgs.nix" ];
+          nixpkgs = {
+            hostPlatform = system;
+            overlays = [ nur.overlays.default ];
+          };
+        };
       _module.args = { inherit nixConfig; };
       systems = [ "x86_64-linux" ];
       imports = [
         ./services
+        # use `nix shell` to enter environment defined with pkgs.buildEnv
+        ./shell
         ./treefmt.nix
       ];
     };

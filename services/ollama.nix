@@ -1,5 +1,5 @@
 # Modified from https://github.com/juspay/services-flake/blob/main/example/llm/flake.nix
-{ inputs, ... }:
+{ ... }:
 {
   perSystem =
     {
@@ -11,9 +11,6 @@
     }:
     let
       ollama = accel: pc: {
-        imports = [
-          inputs.services-flake.processComposeModules.default
-        ];
         services =
           let
             dataDirBase = "$HOME/.services-flake/llm";

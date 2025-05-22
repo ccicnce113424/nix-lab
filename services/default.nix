@@ -5,15 +5,10 @@
     ./ollama.nix
   ];
   perSystem =
-    { system, ... }:
+    { ... }:
     {
       imports = [
-        "${inputs.nixpkgs}/nixos/modules/misc/nixpkgs.nix"
+        inputs.services-flake.processComposeModules.default
       ];
-      nixpkgs = {
-        hostPlatform = system;
-        # Required for CUDA
-        config.allowUnfree = true;
-      };
     };
 }
