@@ -7,5 +7,5 @@ pkgs.mkShell.override
     # stdenv = pkgs.clangStdenv;
   }
   {
-    #packages = with pkgs; [ pkg-config ];
+    packages = with pkgs; [ just ];
   }
