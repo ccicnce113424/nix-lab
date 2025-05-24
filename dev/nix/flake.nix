@@ -1,22 +1,14 @@
 rec {
-  description = "Nix flake containing devShells and services, etc";
+  description = "Nix development environment";
 
   inputs = {
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs."flake-parts".follows = "flake-parts";
-      inputs."treefmt-nix".follows = "treefmt-nix";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-compat.url = "github:edolstra/flake-compat";
-    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
-    services-flake.url = "github:juspay/services-flake";
   };
 
   outputs =
@@ -25,13 +17,17 @@ rec {
       _module.args = { inherit nixConfig; };
       systems = [ "x86_64-linux" ];
       imports = [
-        ./services
-        # use `nix shell` to enter environment defined with pkgs.buildEnv
-        ./shell
-        ./dev
         ./treefmt.nix
         ./nixpkgs.nix
       ];
+
+      # test package
+      perSystem =
+        { pkgs, ... }:
+        {
+          # packages.default = pkgs.stdenv.mkDerivation {};
+          devShells.default = pkgs.callPackage ./shell.nix { };
+        };
     };
 
   nixConfig = {
