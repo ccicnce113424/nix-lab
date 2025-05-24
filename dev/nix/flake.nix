@@ -25,7 +25,7 @@ rec {
         { pkgs, ... }:
         {
           # packages.default = pkgs.stdenv.mkDerivation {};
-          devShells.default = pkgs.callPackage ./shell.nix { };
+          devShells.default = pkgs.callPackage ./devshell.nix { };
         };
     };
 

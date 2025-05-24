@@ -1,11 +1,1 @@
-{
-  pkgs ? import <nixpkgs> { },
-  ...
-}:
-pkgs.mkShell.override
-  {
-    # stdenv = pkgs.clangStdenv;
-  }
-  {
-    packages = with pkgs; [ just ];
-  }
+(import ./default.nix).devShells.${builtins.currentSystem}.default
