@@ -19,8 +19,14 @@ rec {
       imports = [
         ./treefmt.nix
         ./nixpkgs.nix
-        ./devshell.nix
       ];
+
+      perSystem =
+        { pkgs, ... }:
+        {
+          # packages.default = pkgs.stdenv.mkDerivation {};
+          devShells.default = pkgs.callPackage ./devshell.nix { };
+        };
     };
 
   nixConfig = {

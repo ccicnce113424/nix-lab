@@ -31,8 +31,12 @@ rec {
         ./dev
         ./treefmt.nix
         ./nixpkgs.nix
-        ./devshell.nix
       ];
+      perSystem =
+        { pkgs, ... }:
+        {
+          devShells.default = pkgs.callPackage ./devshell.nix { };
+        };
     };
 
   nixConfig = {

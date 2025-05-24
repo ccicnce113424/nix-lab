@@ -1,15 +1,8 @@
-{ ... }:
-{
-  perSystem =
-    { pkgs, ... }:
-    {
-      devShells.default =
-        pkgs.mkShell.override
-          {
-            # stdenv = pkgs.clangStdenv;
-          }
-          {
-            packages = with pkgs; [ just ];
-          };
-    };
-}
+{ pkgs, ... }:
+pkgs.mkShell.override
+  {
+    # stdenv = pkgs.clangStdenv;
+  }
+  {
+    packages = with pkgs; [ just ];
+  }
