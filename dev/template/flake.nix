@@ -21,7 +21,6 @@ rec {
         ./nixpkgs.nix
       ];
 
-      # test package
       perSystem =
         { pkgs, ... }:
         {
