@@ -12,7 +12,7 @@ rec {
       inputs."flake-parts".follows = "flake-parts";
       inputs."treefmt-nix".follows = "treefmt-nix";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-compat.url = "github:edolstra/flake-compat";
     process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
