@@ -6,7 +6,10 @@ let
   };
 in
 {
-  flake.templates = lib.mapAttrs (_: p: { path = p; }) devenvs;
+  flake.templates = lib.mapAttrs (n: p: {
+    path = p;
+    description = n;
+  }) devenvs;
   perSystem =
     { pkgs, ... }:
     {
