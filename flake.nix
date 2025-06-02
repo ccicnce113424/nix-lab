@@ -8,9 +8,11 @@ rec {
     };
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs."flake-parts".follows = "flake-parts";
-      inputs."treefmt-nix".follows = "treefmt-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        "flake-parts".follows = "flake-parts";
+        "treefmt-nix".follows = "treefmt-nix";
+      };
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
