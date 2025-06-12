@@ -1,8 +1,6 @@
 { lib, ... }:
 let
   devenvs = {
-    template = ./template;
-    nix = ./nix;
   };
 in
 {
