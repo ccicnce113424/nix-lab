@@ -10,7 +10,8 @@
           enable = true;
           package = pkgs.nixfmt-rfc-style;
         };
-        programs.deno.enable = true;
+        programs.prettier.enable = true;
+        programs.pinact.enable = true;
         programs.just.enable = true;
         programs.shfmt.enable = true;
       };
