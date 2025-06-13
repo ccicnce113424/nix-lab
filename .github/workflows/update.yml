@@ -1,4 +1,4 @@
-name: Update Flake Lock
+name: Update Dependencies
 
 on:
   push:
@@ -9,9 +9,9 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  lockfile:
+  update:
     runs-on: ubuntu-latest
-    name: Update Lockfile
+    name: Update Dependencies
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -23,9 +23,17 @@ jobs:
             accept-flake-config = true
 
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@main
+        run: nix flake update
+
+      - name: Run treefmt
+        run: nix fmt .
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
-          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }} # https://github.com/DeterminateSystems/update-flake-lock#with-a-personal-authentication-token
-          pr-title: "Update flake.lock" # Title of PR to be created
-          pr-labels: | # Labels to be set on the PR
-            dependencies
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+          commit-message: Update dependencies
+          branch: ci/update-dependencies
+          delete-branch: true
+          title: Update dependencies
+          labels: dependencies
