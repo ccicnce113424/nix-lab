@@ -81,7 +81,7 @@
       };
     in
     {
-      process-compose."ollama-cuda" = ollama "cuda";
+      # process-compose."ollama-cuda" = ollama "cuda";
       process-compose."ollama-rocm" = ollama "rocm";
       process-compose."ollama-cpu" = ollama false;
     };
