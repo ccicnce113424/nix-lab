@@ -74,11 +74,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762200885,
-        "narHash": "sha256-IPrbvJWU+Gwgg6RBFHW1pgBTZi2uDzgBvEZm3phAId0=",
+        "lastModified": 1762305187,
+        "narHash": "sha256-yYfg/dYhpYm3rMib9WbpSR/ZEAIzyxnaCt2RIKYL19w=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "0fbd67c5f81aa452afad41ed95f0e6d161f339cc",
+        "rev": "2bf721f7f167cbc9368982bc358ec33411024981",
         "type": "github"
       },
       "original": {
@@ -89,11 +89,11 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1761063998,
-        "narHash": "sha256-l14CiQZM2ZpWp6leugJ5/GKU1aydT/xrvyKRMgYc0ak=",
+        "lastModified": 1762286656,
+        "narHash": "sha256-17Ycf5v3zX+ZHgF/KqCW9Hd5PFFwkkfs5OhbXtff6YE=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "d1839830cd4a814830a27b3cb58437306747bbd3",
+        "rev": "1664140f2f54380544c344d5a664b1e33c01d45a",
         "type": "github"
       },
       "original": {
@@ -135,11 +135,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761311587,
-        "narHash": "sha256-Msq86cR5SjozQGCnC6H8C+0cD4rnx91BPltZ9KK613Y=",
+        "lastModified": 1762305549,
+        "narHash": "sha256-iHxl8YwQsCX9QyB0ImEvmr+C3FuZP0BR/9vMmjbaITA=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "2eddae033e4e74bf581c2d1dfa101f9033dbd2dc",
+        "rev": "144d1e80d642c50c71846c0cb674e86c956e9a24",
         "type": "github"
       },
       "original": {
