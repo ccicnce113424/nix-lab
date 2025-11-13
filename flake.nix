@@ -11,7 +11,6 @@ rec {
       inputs = {
         nixpkgs.follows = "nixpkgs";
         "flake-parts".follows = "flake-parts";
-        "treefmt-nix".follows = "treefmt-nix";
       };
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
