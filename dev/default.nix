@@ -1,6 +1,7 @@
 { lib, ... }:
 let
   devenvs = {
+    python = ./python;
   };
 in
 {
@@ -11,6 +12,6 @@ in
   perSystem =
     { pkgs, ... }:
     {
-      devShells = lib.mapAttrs (_: p: pkgs.callPackage "${p}/devshell.nix" { }) devenvs;
+      devShells = lib.mapAttrs (_: p: pkgs.callPackage "${p}/shell.nix" { }) devenvs;
     };
 }
