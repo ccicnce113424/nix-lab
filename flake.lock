@@ -74,11 +74,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766798093,
-        "narHash": "sha256-ogZGywXpqODVY7lyKhbF1iIrtBE/3FiphxVtefF0lGU=",
+        "lastModified": 1766885090,
+        "narHash": "sha256-U2AnFDR0TKmIIvTOvN89S2EJ4/ILM6hbLdQZVEdmQ3E=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "77d6b35b59b815dd8e6b866eb7f2abdae907e9f0",
+        "rev": "b75d38e6dcaf69708fe69da2f70efa3aa7dbf7fd",
         "type": "github"
       },
       "original": {
