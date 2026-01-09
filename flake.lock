@@ -74,11 +74,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767828558,
-        "narHash": "sha256-rTv32Ca2bGkAHCH/+QD7Mp5Vx9n/ernxo6aAB2IEB3s=",
+        "lastModified": 1767921371,
+        "narHash": "sha256-yVld6y26PfIYaPlHidLo8KRcrbE4DXrslt5Ebbgdp7s=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d52c207f4e9373a418661f51d7ada64c72473a8d",
+        "rev": "16f5578951249441922605cc9853f07398cb2cd7",
         "type": "github"
       },
       "original": {
@@ -89,11 +89,11 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1764915241,
-        "narHash": "sha256-vTqn6IAkZhuuctvkxjhzI1EEybyzwaNd7HJvhF662O8=",
+        "lastModified": 1767863885,
+        "narHash": "sha256-XXekPAxzbv1DmHFo3Elmj/vDnvWc1V0jdDUvM0/Wf7k=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "36678818ecbd0e06a60740a291c55b683fec79dd",
+        "rev": "99bea96cf269cfd235833ebdf645b567069fd398",
         "type": "github"
       },
       "original": {
