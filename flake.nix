@@ -1,4 +1,4 @@
-rec {
+{
   description = "Nix flake containing devShells and services, etc";
 
   inputs = {
@@ -21,9 +21,9 @@ rec {
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
+    inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      _module.args = { inherit nixConfig; };
+      _module.args = { inherit (self) nixConfig; };
       systems = [ "x86_64-linux" ];
       imports = [
         ./services
