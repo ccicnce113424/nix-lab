@@ -12,6 +12,6 @@ in
   perSystem =
     { pkgs, ... }:
     {
-      devShells = lib.mapAttrs (_: p: pkgs.callPackage "${p}/shell.nix" { }) devenvs;
+      devShells = lib.mapAttrs (_: p: pkgs.callPackage (p + "/shell.nix") { }) devenvs;
     };
 }
