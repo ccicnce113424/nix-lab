@@ -2,6 +2,7 @@
 let
   devenvs = {
     python = ./python;
+    rust = ./rust;
   };
 in
 {
