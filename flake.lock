@@ -74,11 +74,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775267237,
-        "narHash": "sha256-KKn51P/IfMRP+0DBsQCarIgZoLncSBNpZDX/q3jXzpo=",
+        "lastModified": 1775353944,
+        "narHash": "sha256-PDze7UQNBA2GtYIPh/TmGHmXkYrxB+X9IidV/4mpPtE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "eff96bf3d600c47aac4c482149b0c66071cc1e96",
+        "rev": "2103a20cde8e25dec68921d3d8688e98ffcb4fee",
         "type": "github"
       },
       "original": {
@@ -115,11 +115,11 @@
     },
     "services-flake": {
       "locked": {
-        "lastModified": 1774982857,
-        "narHash": "sha256-3ztHk4BnXT8K3yREnFzE0UAfg1X4J8D2eoXenhN0Mno=",
+        "lastModified": 1775350809,
+        "narHash": "sha256-a3ZsCSRZlnl0PfjlyE5Gl8CID1Yc7ZHR1BXZ6jEyWck=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "effd4ee31f65c3a91d7854052393352538094e26",
+        "rev": "86462af76003cd493684502cca96fd5649265be3",
         "type": "github"
       },
       "original": {
