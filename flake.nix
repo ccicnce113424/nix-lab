@@ -25,6 +25,7 @@ rec {
     flake-parts.lib.mkFlake { inherit inputs; } {
       _module.args = { inherit nixConfig; };
       systems = [ "x86_64-linux" ];
+      debug = true;
       imports = [
         ./services
         # use `nix shell` to enter environment defined with pkgs.buildEnv
