@@ -15,7 +15,7 @@ rec {
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-compat.url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
+    flake-compat.url = "github:lix-project/flake-compat";
     process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
     services-flake.url = "github:juspay/services-flake";
   };
