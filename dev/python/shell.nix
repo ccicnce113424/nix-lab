@@ -17,6 +17,9 @@
           zlib
           python313
           python313Packages.pip
+
+          basedpyright
+          ruff
         ]);
       runScript = "zsh";
       extraOutputsToInstall = [ "dev" ];
