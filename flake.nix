@@ -30,7 +30,7 @@ rec {
       systems = [ "x86_64-linux" ];
       debug = true;
       imports = [
-        ./services
+        # ./services
         # use `nix shell` to enter environment defined with pkgs.buildEnv
         ./shell
         ./dev
